@@ -6,7 +6,7 @@ from aiogram.types import Message, ReplyKeyboardRemove, ReplyKeyboardMarkup, Inl
 from aiogram.dispatcher import FSMContext
 
 from Kwork_order_bot.App.Classes.States_classes import Start_waiting_group
-from Kwork_order_bot.settings import admin_id
+from Kwork_order_bot.settings import admin_id, TOKEN
 
 database = sqlite3.connect(r'C:\Users\Asus\PycharmProjects\Примеры работ\Kwork_order_bot\database.db')
 sql = database.cursor()
@@ -16,7 +16,6 @@ admin_sql = admin_database.cursor()
 
 admin_id = admin_id[0]
 
-TOKEN = '5444931587:AAEo_yZbOFrubf8nvMOqZWRCDsoOSG094Xc'
 bot = Bot(token=TOKEN, parse_mode=types.ParseMode.HTML)
 
 async def Main_menu(message: Message, state: FSMContext):
